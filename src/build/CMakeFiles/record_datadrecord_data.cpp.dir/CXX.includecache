@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mscvadmin/st_record_system/src/stfile_io.cpp
+stfile_io.h
+/home/mscvadmin/st_record_system/src/stfile_io.h
+
+/home/mscvadmin/st_record_system/src/stfile_io.h
+string
+-
+stdio.h
+-
+cassert
+-
+vector
+-
+iostream
+-
+chrono
+-
+

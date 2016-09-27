@@ -1,0 +1,4 @@
+/home/mscvadmin/st_record_system/src/build/CMakeFiles/edit_cache.dir
+/home/mscvadmin/st_record_system/src/build/CMakeFiles/rebuild_cache.dir
+/home/mscvadmin/st_record_system/src/build/CMakeFiles/read_data.dir
+/home/mscvadmin/st_record_system/src/build/CMakeFiles/record_datad.dir

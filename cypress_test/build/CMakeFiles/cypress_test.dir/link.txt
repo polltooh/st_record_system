@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/cypress_test.dir/Test_Utility.c.o  -o cypress_test -lcyusbserial 

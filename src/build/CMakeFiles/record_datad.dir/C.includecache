@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mscvadmin/libcyusbserial/include/CyUSBSerial.h
+
+/home/mscvadmin/st_record_system/src/gloop_measure_spi_cypressusb.c
+gloop_measure_spi_interface.h
+/home/mscvadmin/st_record_system/src/gloop_measure_spi_interface.h
+CyUSBSerial.h
+/home/mscvadmin/st_record_system/src/CyUSBSerial.h
+string.h
+-
+unistd.h
+-
+
+/home/mscvadmin/st_record_system/src/gloop_measure_spi_interface.h
+stdint.h
+-
+stdbool.h
+-
+string.h
+-
+

@@ -1,0 +1,3 @@
+/home/mscvadmin/mimic/osx_port/cypress_test/build/CMakeFiles/edit_cache.dir
+/home/mscvadmin/mimic/osx_port/cypress_test/build/CMakeFiles/rebuild_cache.dir
+/home/mscvadmin/mimic/osx_port/cypress_test/build/CMakeFiles/cypress_test.dir

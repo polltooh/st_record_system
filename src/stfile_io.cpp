@@ -89,6 +89,6 @@ void STFileIO::read_data(STFileIO::DataStruct& dstruct){
 		dstruct.data.push_back(vector<uint16_t> (temp_data, temp_data + buff_size_));
 
 		//cout<<"label: " << label[label.size()-1]<<" ";
-		print_data(dstruct.data[dstruct.data.size()-1]);
+		//print_data(dstruct.data[dstruct.data.size()-1]);
 	}
 }

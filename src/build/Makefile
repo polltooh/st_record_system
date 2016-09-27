@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named record_datad
+
+# Build rule for target.
+record_datad: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 record_datad
+.PHONY : record_datad
+
+# fast build rule for target.
+record_datad/fast:
+	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/build
+.PHONY : record_datad/fast
+
+#=============================================================================
 # Target rules for targets named read_data
 
 # Build rule for target.
@@ -124,17 +137,44 @@ read_data/fast:
 .PHONY : read_data/fast
 
 #=============================================================================
-# Target rules for targets named record_datad
+# Target rules for targets named convert_data
 
 # Build rule for target.
-record_datad: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 record_datad
-.PHONY : record_datad
+convert_data: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 convert_data
+.PHONY : convert_data
 
 # fast build rule for target.
-record_datad/fast:
-	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/build
-.PHONY : record_datad/fast
+convert_data/fast:
+	$(MAKE) -f CMakeFiles/convert_data.dir/build.make CMakeFiles/convert_data.dir/build
+.PHONY : convert_data/fast
+
+convert_data.o: convert_data.cpp.o
+
+.PHONY : convert_data.o
+
+# target to build an object file
+convert_data.cpp.o:
+	$(MAKE) -f CMakeFiles/convert_data.dir/build.make CMakeFiles/convert_data.dir/convert_data.cpp.o
+.PHONY : convert_data.cpp.o
+
+convert_data.i: convert_data.cpp.i
+
+.PHONY : convert_data.i
+
+# target to preprocess a source file
+convert_data.cpp.i:
+	$(MAKE) -f CMakeFiles/convert_data.dir/build.make CMakeFiles/convert_data.dir/convert_data.cpp.i
+.PHONY : convert_data.cpp.i
+
+convert_data.s: convert_data.cpp.s
+
+.PHONY : convert_data.s
+
+# target to generate assembly for a file
+convert_data.cpp.s:
+	$(MAKE) -f CMakeFiles/convert_data.dir/build.make CMakeFiles/convert_data.dir/convert_data.cpp.s
+.PHONY : convert_data.cpp.s
 
 gloop_measure_spi_cypressusb.o: gloop_measure_spi_cypressusb.c.o
 
@@ -223,8 +263,9 @@ stfile_io.o: stfile_io.cpp.o
 
 # target to build an object file
 stfile_io.cpp.o:
-	$(MAKE) -f CMakeFiles/read_data.dir/build.make CMakeFiles/read_data.dir/stfile_io.cpp.o
 	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/stfile_io.cpp.o
+	$(MAKE) -f CMakeFiles/read_data.dir/build.make CMakeFiles/read_data.dir/stfile_io.cpp.o
+	$(MAKE) -f CMakeFiles/convert_data.dir/build.make CMakeFiles/convert_data.dir/stfile_io.cpp.o
 .PHONY : stfile_io.cpp.o
 
 stfile_io.i: stfile_io.cpp.i
@@ -233,8 +274,9 @@ stfile_io.i: stfile_io.cpp.i
 
 # target to preprocess a source file
 stfile_io.cpp.i:
-	$(MAKE) -f CMakeFiles/read_data.dir/build.make CMakeFiles/read_data.dir/stfile_io.cpp.i
 	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/stfile_io.cpp.i
+	$(MAKE) -f CMakeFiles/read_data.dir/build.make CMakeFiles/read_data.dir/stfile_io.cpp.i
+	$(MAKE) -f CMakeFiles/convert_data.dir/build.make CMakeFiles/convert_data.dir/stfile_io.cpp.i
 .PHONY : stfile_io.cpp.i
 
 stfile_io.s: stfile_io.cpp.s
@@ -243,8 +285,9 @@ stfile_io.s: stfile_io.cpp.s
 
 # target to generate assembly for a file
 stfile_io.cpp.s:
-	$(MAKE) -f CMakeFiles/read_data.dir/build.make CMakeFiles/read_data.dir/stfile_io.cpp.s
 	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/stfile_io.cpp.s
+	$(MAKE) -f CMakeFiles/read_data.dir/build.make CMakeFiles/read_data.dir/stfile_io.cpp.s
+	$(MAKE) -f CMakeFiles/convert_data.dir/build.make CMakeFiles/convert_data.dir/stfile_io.cpp.s
 .PHONY : stfile_io.cpp.s
 
 # Help Target
@@ -254,9 +297,13 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... rebuild_cache"
-	@echo "... read_data"
 	@echo "... record_datad"
+	@echo "... read_data"
+	@echo "... convert_data"
+	@echo "... rebuild_cache"
+	@echo "... convert_data.o"
+	@echo "... convert_data.i"
+	@echo "... convert_data.s"
 	@echo "... gloop_measure_spi_cypressusb.o"
 	@echo "... gloop_measure_spi_cypressusb.i"
 	@echo "... gloop_measure_spi_cypressusb.s"

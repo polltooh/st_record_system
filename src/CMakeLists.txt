@@ -34,6 +34,7 @@ set(SOURCE_FILES record_data.cpp gloop_measure_spi_cypressusb.c stfile_io.cpp)
 
 add_executable(record_datad ${SOURCE_FILES})
 add_executable(read_data read_data.cpp stfile_io.cpp)
+add_executable(convert_data convert_data.cpp stfile_io.cpp)
 
 #set(DEVICE_SOURCE_FILES get_device_num.c)
 #add_executable(get_num ${DEVICE_SOURCE_FILES})

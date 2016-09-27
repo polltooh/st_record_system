@@ -11,6 +11,7 @@
 #include <iostream>
 #include <unistd.h>
 #include <unordered_map>
+#include <signal.h>
 #include <chrono>
 
 using namespace std;
@@ -35,6 +36,13 @@ void play_audio(string audio_name){
 	system(command.c_str());
 }
 
+bool prog_stop = false;
+
+void handle_exit(int params){
+	cout<<"stop program"<<endl;
+	prog_stop = true;
+}
+
 void key_press(bool& write_to_dict, int& label, bool &quit){
 	while(1){
 		// make sure label changed before 
@@ -50,7 +58,7 @@ void key_press(bool& write_to_dict, int& label, bool &quit){
 		cv::imshow("image", img);
 		auto key = cv::waitKey();
 		audio_thread.join();	
-		if (key == quit_key){
+		if (key == quit_key || prog_stop){
 			quit = true;
 			return;
 		}
@@ -71,6 +79,8 @@ void add_check_ext(string& input_str){
 }
 
 int main(int argc, char** argv){
+
+  	signal (SIGINT, handle_exit);
 
 	string default_input_str = "test_data";
 	auto file_name_no_ext = default_input_str;
@@ -156,7 +166,7 @@ int main(int argc, char** argv){
 			}
 			++j;
 		}
-		if (quit){
+		if (quit || prog_stop){
 			break;
 		}
 		auto curr_time = chrono::high_resolution_clock::now();

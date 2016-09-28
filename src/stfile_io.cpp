@@ -1,12 +1,11 @@
 #include "stfile_io.h"
 
 
-void remove_file_ext(string& file_name){
+void STFileIO::remove_file_ext(string& file_name){
 	auto p_index = file_name.find(".");
 	if (p_index != string::npos){ 
 		file_name = file_name.substr(0, p_index);	
 	}
-	
 }
 
 

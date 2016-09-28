@@ -4,7 +4,9 @@
 #include "gloop_measure_spi_interface.h"
 
 #include <stdio.h>
+#include <ctime>
 #include <stdlib.h>
+#include <sys/stat.h>
 #include <time.h>
 #include <opencv2/opencv.hpp>
 #include <thread>
@@ -30,6 +32,35 @@ unordered_map<int,string> label_map{
 
 const int quit_key = 113;
 
+
+string get_curr_time(){
+	time_t t = time(0);
+	struct tm* now = localtime(&t);
+	cout<<now->tm_year + 1900 << " " << now->tm_mon + 1 << " "<<now->tm_mday<<endl;
+	char buff[100];
+	sprintf(buff, "%d_%d_%d",now->tm_year + 1900, now->tm_mon + 1, now->tm_mday);
+	return string(buff);
+}
+
+inline bool check_exists_help(const std::string& name) {
+  struct stat buffer;   
+  return (stat (name.c_str(), &buffer) == 0); 
+}
+
+void check_exists(string& file_name_no_ext){
+	string full_name = file_name_no_ext + ".ldata";	
+	if (!check_exists_help(full_name)) return;
+
+	int start = 1;
+	while(1){
+		full_name = file_name_no_ext + "_" + to_string(start) + ".ldata";
+		if (!check_exists_help(full_name)){
+				file_name_no_ext += "_" + to_string(start);
+			break;
+	 	}
+		++start;
+	}
+}
 
 void play_audio(string audio_name){
 	string command = "aplay " + audio_name;
@@ -74,15 +105,12 @@ void key_press(bool& write_to_dict, int& label, bool &quit){
 //	fwrite(data, sizeof(uint16_t), data_size, fptr);
 //}
 
-void add_check_ext(string& input_str){
-
-}
 
 int main(int argc, char** argv){
 
   	signal (SIGINT, handle_exit);
 
-	string default_input_str = "test_data";
+	string default_input_str = "data/guanhanw/";
 	auto file_name_no_ext = default_input_str;
 
 
@@ -90,6 +118,12 @@ int main(int argc, char** argv){
 			file_name_no_ext = string(argv[1]); 
 	}
 
+	auto curr_date = get_curr_time();
+	file_name_no_ext += curr_date;
+
+	check_exists(file_name_no_ext);
+	cout<<file_name_no_ext <<endl;
+	exit(1);
 	bool write_to_dict = false;
 	int label = 0;
 	bool quit = false;

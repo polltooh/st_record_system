@@ -6,6 +6,7 @@
 #include <cassert>
 #include <vector>
 #include <iostream>
+
 #include <chrono>
 
 using namespace std;
@@ -17,6 +18,7 @@ class STFileIO{
 	FILE* fptr_label_;
 	bool write_size_;
 	size_t buff_size_;
+	void remove_file_ext(string& file_name);
 public:
 	struct DataStruct{
 		vector<chrono::high_resolution_clock::time_point> label_time;

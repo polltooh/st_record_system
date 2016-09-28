@@ -25,6 +25,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/share/cmake-3.6/Modules/Compiler/GNU-C.cmake"
   "/usr/local/share/cmake-3.6/Modules/Compiler/GNU-CXX.cmake"
   "/usr/local/share/cmake-3.6/Modules/Compiler/GNU.cmake"
+  "/usr/local/share/cmake-3.6/Modules/FindBoost.cmake"
   "/usr/local/share/cmake-3.6/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/local/share/cmake-3.6/Modules/FindPackageMessage.cmake"
   "/usr/local/share/cmake-3.6/Modules/FindThreads.cmake"

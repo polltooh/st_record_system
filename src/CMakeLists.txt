@@ -15,6 +15,12 @@ add_definitions(${OpenCV_DEFINITIONS})
 find_package( Threads )
 link_libraries(${CMAKE_THREAD_LIBS_INIT})
 
+
+
+find_package(Boost 1.54 COMPONENTS filesystem REQUIRED)
+
+include_directories(${Boost_INCLUDE_DIR})
+
 #link_directories(/home/mscvadmin/libcyusbserial/lib)
 #include_directories(/home/mscvadmin/libcyusbserial/include)
 
@@ -23,6 +29,8 @@ include_directories(/home/mscvadmin/libcyusbserial/include)
 link_libraries(libcyusbserial.so.1)
 
 link_libraries(${OpenCV_LIBRARIES})
+
+link_libraries(${Boost_LIBRARIES})
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 

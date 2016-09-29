@@ -122,8 +122,6 @@ int main(int argc, char** argv){
 	file_name_no_ext += curr_date;
 
 	check_exists(file_name_no_ext);
-	cout<<file_name_no_ext <<endl;
-	exit(1);
 	bool write_to_dict = false;
 	int label = 0;
 	bool quit = false;

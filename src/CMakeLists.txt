@@ -15,7 +15,7 @@ add_definitions(${OpenCV_DEFINITIONS})
 find_package( Threads )
 link_libraries(${CMAKE_THREAD_LIBS_INIT})
 
-
+set(CMAKE_BUILD_TYPE Debug)
 
 find_package(Boost 1.54 COMPONENTS filesystem REQUIRED)
 

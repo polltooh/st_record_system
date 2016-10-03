@@ -1,4 +1,5 @@
 *.ldata
 *.stdata
 src/build/CMakeFiles/*
+src/build/*
 

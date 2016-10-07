@@ -40,7 +40,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 #set(SOURCE_FILES test.cpp gloop_measure_spi_cypressusb.c)
 set(SOURCE_FILES record_data.cpp gloop_measure_spi_cypressusb.c stfile_io.cpp)
 
-add_executable(record_datad ${SOURCE_FILES})
+add_executable(record_data ${SOURCE_FILES})
 add_executable(read_data read_data.cpp stfile_io.cpp)
 add_executable(convert_data convert_data.cpp stfile_io.cpp)
 

@@ -79,18 +79,19 @@ void save_data(string path, vector<int>& label, vector<vector<float>>& data){
 	auto* output_filed = fopen(data_name.c_str(), "w");
 
     for (auto &&da : data)
-		for(auto&& d : da)
+		for(auto&& d : da){
 			fwrite(&d, sizeof(float), 1, output_filed);
+		}
 
 	fclose(output_filed);
-
-			//output_filed << d;
-	//for (auto &&da : data)
-	//	for(auto&& d : da)
-	//		output_filed << d;
 }
+// file_name
+// data to store the sensor response
+// label corresponding to the data
+// win_size: > 0
 
-void get_data_label(string file_name, vector<vector<float>>& data, vector<int>& label){
+void get_data_label(string file_name, vector<vector<float>>& data, vector<int>& label, int win_size){
+	assert(win_size > 0);
 
 	STFileIO file_io(file_name, false);
 	STFileIO::DataStruct dstruct;
@@ -100,18 +101,26 @@ void get_data_label(string file_name, vector<vector<float>>& data, vector<int>& 
 
 	int data_start_index = 0;
 
+	auto end_index = label.size();
+
 	for (int i = 0; i < dstruct.label_time.size(); ++i){
 		label.push_back(dstruct.label[i]);
 		int data_index = get_data_index(dstruct.label_time[i], dstruct.data_time, data_start_index);
-
-		vector<float> data_vec(fdata[data_index].begin() + 1, fdata[data_index].end());
-		//first element is not used
-		//vector<uint16_t> data_vec(dstruct.data[data_index].begin() + 1, dstruct.data[data_index].end());
-		data.push_back(data_vec);
 		data_start_index = data_index + 1;
-		cout<<label[i]<<" ";
-		for (auto&& d : data[i]) cout<<d<<" ";
+		if (data_index < win_size) continue;
+
+		vector<float> data_vec;
+		for (int j = win_size - 1; j >= 0; --j){
+			//first element is not used
+			data_vec.insert(data_vec.end(), fdata[data_index - j].begin() +1, fdata[data_index - j].end());
+		}
+				
+		//vector<float> data_vec(fdata[data_index].begin() + 1, fdata[data_index].end());
+		data.push_back(data_vec);
+		cout<<label[end_index]<<" ";
+		for (auto&& d : data[end_index]) cout<<d<<" ";
 		cout<<endl;
+		end_index++;
 	}
 }
 
@@ -125,8 +134,9 @@ int main(int argc, char* argv[]){
 	auto file_list = get_list_files(input_file_name);
 	vector<vector<float>> data;
 	vector<int> label;
+	int win_size = 5;
 	for (auto&& file_name : file_list){
-		get_data_label(file_name, data, label);
+		get_data_label(file_name, data, label, win_size);
 	}
 	cout<<"total data is "<<label.size()<<endl;
 	save_data(input_file_name, label, data);

@@ -60,39 +60,39 @@ CMAKE_SOURCE_DIR = /home/mscvadmin/st_record_system/src
 CMAKE_BINARY_DIR = /home/mscvadmin/st_record_system/src/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/record_datad.dir
+# Target rules for target CMakeFiles/record_data.dir
 
 # All Build rule for target.
-CMakeFiles/record_datad.dir/all:
-	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/depend
-	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mscvadmin/st_record_system/src/build/CMakeFiles --progress-num=7,8,9,10 "Built target record_datad"
-.PHONY : CMakeFiles/record_datad.dir/all
+CMakeFiles/record_data.dir/all:
+	$(MAKE) -f CMakeFiles/record_data.dir/build.make CMakeFiles/record_data.dir/depend
+	$(MAKE) -f CMakeFiles/record_data.dir/build.make CMakeFiles/record_data.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mscvadmin/st_record_system/src/build/CMakeFiles --progress-num=7,8,9,10 "Built target record_data"
+.PHONY : CMakeFiles/record_data.dir/all
 
 # Include target in all.
-all: CMakeFiles/record_datad.dir/all
+all: CMakeFiles/record_data.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/record_datad.dir/rule: cmake_check_build_system
+CMakeFiles/record_data.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mscvadmin/st_record_system/src/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/record_datad.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/record_data.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mscvadmin/st_record_system/src/build/CMakeFiles 0
-.PHONY : CMakeFiles/record_datad.dir/rule
+.PHONY : CMakeFiles/record_data.dir/rule
 
 # Convenience name for target.
-record_datad: CMakeFiles/record_datad.dir/rule
+record_data: CMakeFiles/record_data.dir/rule
 
-.PHONY : record_datad
-
-# clean rule for target.
-CMakeFiles/record_datad.dir/clean:
-	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/clean
-.PHONY : CMakeFiles/record_datad.dir/clean
+.PHONY : record_data
 
 # clean rule for target.
-clean: CMakeFiles/record_datad.dir/clean
+CMakeFiles/record_data.dir/clean:
+	$(MAKE) -f CMakeFiles/record_data.dir/build.make CMakeFiles/record_data.dir/clean
+.PHONY : CMakeFiles/record_data.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/record_data.dir/clean
 
 .PHONY : clean
 

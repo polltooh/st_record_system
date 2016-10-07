@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named record_datad
+# Target rules for targets named record_data
 
 # Build rule for target.
-record_datad: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 record_datad
-.PHONY : record_datad
+record_data: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 record_data
+.PHONY : record_data
 
 # fast build rule for target.
-record_datad/fast:
-	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/build
-.PHONY : record_datad/fast
+record_data/fast:
+	$(MAKE) -f CMakeFiles/record_data.dir/build.make CMakeFiles/record_data.dir/build
+.PHONY : record_data/fast
 
 #=============================================================================
 # Target rules for targets named read_data
@@ -182,7 +182,7 @@ gloop_measure_spi_cypressusb.o: gloop_measure_spi_cypressusb.c.o
 
 # target to build an object file
 gloop_measure_spi_cypressusb.c.o:
-	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/gloop_measure_spi_cypressusb.c.o
+	$(MAKE) -f CMakeFiles/record_data.dir/build.make CMakeFiles/record_data.dir/gloop_measure_spi_cypressusb.c.o
 .PHONY : gloop_measure_spi_cypressusb.c.o
 
 gloop_measure_spi_cypressusb.i: gloop_measure_spi_cypressusb.c.i
@@ -191,7 +191,7 @@ gloop_measure_spi_cypressusb.i: gloop_measure_spi_cypressusb.c.i
 
 # target to preprocess a source file
 gloop_measure_spi_cypressusb.c.i:
-	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/gloop_measure_spi_cypressusb.c.i
+	$(MAKE) -f CMakeFiles/record_data.dir/build.make CMakeFiles/record_data.dir/gloop_measure_spi_cypressusb.c.i
 .PHONY : gloop_measure_spi_cypressusb.c.i
 
 gloop_measure_spi_cypressusb.s: gloop_measure_spi_cypressusb.c.s
@@ -200,7 +200,7 @@ gloop_measure_spi_cypressusb.s: gloop_measure_spi_cypressusb.c.s
 
 # target to generate assembly for a file
 gloop_measure_spi_cypressusb.c.s:
-	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/gloop_measure_spi_cypressusb.c.s
+	$(MAKE) -f CMakeFiles/record_data.dir/build.make CMakeFiles/record_data.dir/gloop_measure_spi_cypressusb.c.s
 .PHONY : gloop_measure_spi_cypressusb.c.s
 
 read_data.o: read_data.cpp.o
@@ -236,7 +236,7 @@ record_data.o: record_data.cpp.o
 
 # target to build an object file
 record_data.cpp.o:
-	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/record_data.cpp.o
+	$(MAKE) -f CMakeFiles/record_data.dir/build.make CMakeFiles/record_data.dir/record_data.cpp.o
 .PHONY : record_data.cpp.o
 
 record_data.i: record_data.cpp.i
@@ -245,7 +245,7 @@ record_data.i: record_data.cpp.i
 
 # target to preprocess a source file
 record_data.cpp.i:
-	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/record_data.cpp.i
+	$(MAKE) -f CMakeFiles/record_data.dir/build.make CMakeFiles/record_data.dir/record_data.cpp.i
 .PHONY : record_data.cpp.i
 
 record_data.s: record_data.cpp.s
@@ -254,7 +254,7 @@ record_data.s: record_data.cpp.s
 
 # target to generate assembly for a file
 record_data.cpp.s:
-	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/record_data.cpp.s
+	$(MAKE) -f CMakeFiles/record_data.dir/build.make CMakeFiles/record_data.dir/record_data.cpp.s
 .PHONY : record_data.cpp.s
 
 stfile_io.o: stfile_io.cpp.o
@@ -263,7 +263,7 @@ stfile_io.o: stfile_io.cpp.o
 
 # target to build an object file
 stfile_io.cpp.o:
-	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/stfile_io.cpp.o
+	$(MAKE) -f CMakeFiles/record_data.dir/build.make CMakeFiles/record_data.dir/stfile_io.cpp.o
 	$(MAKE) -f CMakeFiles/read_data.dir/build.make CMakeFiles/read_data.dir/stfile_io.cpp.o
 	$(MAKE) -f CMakeFiles/convert_data.dir/build.make CMakeFiles/convert_data.dir/stfile_io.cpp.o
 .PHONY : stfile_io.cpp.o
@@ -274,7 +274,7 @@ stfile_io.i: stfile_io.cpp.i
 
 # target to preprocess a source file
 stfile_io.cpp.i:
-	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/stfile_io.cpp.i
+	$(MAKE) -f CMakeFiles/record_data.dir/build.make CMakeFiles/record_data.dir/stfile_io.cpp.i
 	$(MAKE) -f CMakeFiles/read_data.dir/build.make CMakeFiles/read_data.dir/stfile_io.cpp.i
 	$(MAKE) -f CMakeFiles/convert_data.dir/build.make CMakeFiles/convert_data.dir/stfile_io.cpp.i
 .PHONY : stfile_io.cpp.i
@@ -285,7 +285,7 @@ stfile_io.s: stfile_io.cpp.s
 
 # target to generate assembly for a file
 stfile_io.cpp.s:
-	$(MAKE) -f CMakeFiles/record_datad.dir/build.make CMakeFiles/record_datad.dir/stfile_io.cpp.s
+	$(MAKE) -f CMakeFiles/record_data.dir/build.make CMakeFiles/record_data.dir/stfile_io.cpp.s
 	$(MAKE) -f CMakeFiles/read_data.dir/build.make CMakeFiles/read_data.dir/stfile_io.cpp.s
 	$(MAKE) -f CMakeFiles/convert_data.dir/build.make CMakeFiles/convert_data.dir/stfile_io.cpp.s
 .PHONY : stfile_io.cpp.s
@@ -297,7 +297,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... record_datad"
+	@echo "... record_data"
 	@echo "... read_data"
 	@echo "... convert_data"
 	@echo "... rebuild_cache"

@@ -30,7 +30,7 @@ unordered_map<int,string> label_map{
 	{8, "scrunch_your_nose"}
 };
 
-const int quit_key = 113;
+const int quit_key = 1048689;
 
 
 string get_curr_time(){
